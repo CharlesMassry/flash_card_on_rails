@@ -1,0 +1,10 @@
+<h1><%= @deck.name %> Deck</h1>
+<h3><%= @card.front %></h3>
+
+<%= form_for check_path(@deck.id, @card.id) do |form| %>
+  <div>
+    <%= form.label :back %>
+    <%= form.text_field :back %>
+  </div>
+  <%= form.submit "Submit Answer" %>
+<% end %>

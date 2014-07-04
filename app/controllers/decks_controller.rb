@@ -5,6 +5,7 @@ class DecksController < ApplicationController
 
   def show
     @deck = find_deck
+    @cards = @deck.cards
   end
 
   def new

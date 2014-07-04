@@ -1,3 +1,14 @@
 <h1><%= @deck.name %></h1>
+
+<div>
+  <%= link_to "Add Card", new_deck_card_path(@deck) %>
+</div>
+<div>
 <%= link_to "Edit deck", edit_deck_path %>
 <%= link_to "Delete deck", @deck, method: :delete, data: { confirm: "Are you sure?" } %>
+</div>
+<div>
+<% if @cards %>
+  <%= link_to "Play Random Card", random_card_path(@deck) %>
+<% end %>
+<div>
