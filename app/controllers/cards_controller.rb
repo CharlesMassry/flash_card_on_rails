@@ -42,22 +42,14 @@ class CardsController < ApplicationController
     redirect_to deck
   end
 
-  def right
-
-  end
-
-  def wrong
-
-  end
-
   def check
     deck = find_deck
     card = find_card_in(deck)
     input = params["/decks/#{deck.id}/cards/#{card.id}"][:back]
     if input.downcase == card.back.downcase
-      redirect_to right_path
+      render "right.html.erb"
     else
-      redirect_to wrong_path
+      render "wrong.html.erb"
     end
   end
 
