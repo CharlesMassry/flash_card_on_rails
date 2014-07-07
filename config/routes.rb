@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :decks do
     resource :random_card, only: [:show]
     resources :cards do
-      resource :result, only: [:create, :show]
+      resource :result, only: [:create]
     end
   end
 end
