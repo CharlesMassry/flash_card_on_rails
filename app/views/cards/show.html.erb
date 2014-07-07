@@ -1,7 +1,8 @@
-<h1><%= @deck.name %> Deck</h1>
+<h1><%= @card.deck.name %> Deck</h1>
 <h3><%= @card.front %></h3>
 
-<%= form_for check_path(@deck.id, @card.id) do |form| %>
+<%= form_for deck_card_result_path(@card.deck_id, @card.id),
+  url: "/decks/#{@card.deck_id}/cards/#{@card.id}/result" do |form| %>
   <div>
     <%= form.label :back %>
     <%= form.text_field :back %>

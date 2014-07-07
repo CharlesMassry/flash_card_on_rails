@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root "decks#index"
-  get "/decks/:id/cards/random", to: "cards#random", as: "random_card"
-  post "/decks/:deck_id/cards/:id", to: "cards#check", as: "check"
   resources :decks do
-    resources :cards
+    resource :random_card, only: [:show]
+    resources :cards do
+      resource :result, only: [:create, :show]
+    end
   end
 end

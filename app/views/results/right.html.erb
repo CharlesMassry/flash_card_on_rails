@@ -1,0 +1,6 @@
+<h1>Congratulations, you are correct!</h1>
+
+<%= link_to "Play again", deck_random_card_path(@deck.id) %><br>
+<%= link_to "New Card", new_deck_card_path %><br>
+<%= link_to "Edit Card", edit_deck_card_path(@deck.id, @card.id) %><br>
+<%= link_to "Delete Card", deck_card_path(@deck.id, @card.id), method: :delete, data: { confirm: "Are you sure?" } %><br>

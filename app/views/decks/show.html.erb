@@ -1,5 +1,7 @@
-<h1><%= @deck.name %></h1>
-
+<h1><%= @deck.name %> Deck</h1>
+<div>
+  <%= link_to "Change Deck", root_path %>
+</div>
 <div>
   <%= link_to "Add Card", new_deck_card_path(@deck) %>
 </div>
@@ -9,6 +11,6 @@
 </div>
 <div>
 <% if @cards %>
-  <%= link_to "Play Random Card", random_card_path(@deck) %>
+  <%= link_to "Play Random Card", deck_random_card_path(@deck) %>
 <% end %>
 <div>
